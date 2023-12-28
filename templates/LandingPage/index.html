@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Palenque de Mezcal</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#campos-de-agave">Campos de Agave</a></li>
+                <li><a href="#proceso-mezcal">Proceso de Elaboración</a></li>
+                <li><a href="#reservaciones">Reservaciones</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <h1></h1>
+        </header>
+
+        <div class="container">
+
+            <section class="seccion" id="campos-de-agave">
+                <div class="titulo-seccion">Bienvenidos a Nuestro Palenque de Mezcal</div>
+                <div class="contenido-seccion">
+                    <div class="tarjeta">
+                        <img src="ruta-a-tu-imagen.jpg" alt="Campos de Agave">
+                        <div class="cuerpo-tarjeta">
+                        <h3>Campos de Agave</h3>
+                        <p>Descubre los extensos campos de agave donde comienza nuestro viaje.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                   
+
+            <section id="proceso-mezcal" class="seccion">
+                <div class="titulo-seccion">Proceso de Elaboración del Mezcal</div>
+                <div class="contenido-seccion">
+                    
+                    <div class="tarjeta proceso" onclick="openModal('modal-siembra')">
+                        <img src="{% static 'images/siembra.jpg' %}" alt="Siembra">
+                        <h3>Siembra</h3>
+                    </div>
+                    <div class="tarjeta proceso" onclick="openModal('modal-jima')">
+                        <img src="{% static 'images/jima.jpg' %}" alt="Jima">
+                        <h3>Jima</h3>
+                    </div>
+                    <div class="tarjeta proceso" onclick="openModal('modal-coccion')">
+                        <img src="{% static 'images/coccion.jpg' %}" alt="Cocción">
+                        <h3>Cocción</h3>
+                    </div>
+                    <div class="tarjeta proceso" onclick="openModal('modal-molienda')">
+                        <img src="{% static 'images/molienda.jpg' %}" alt="Molienda">
+                        <h3>Molienda</h3>
+                    </div>
+                    <div class="tarjeta proceso" onclick="openModal('modal-fermentacion')">
+                        <img src="{% static 'images/fermentacion.jpg' %}" alt="Fermentación">
+                        <h3>Fermentación</h3>
+                    </div>
+                    <div class="tarjeta proceso" onclick="openModal('modal-destilacion')">
+                        <img src="{% static 'images/destilacion.jpg' %}" alt="Destilación">
+                        <h3>Destilación</h3>
+                    </div>
+                    <div class="tarjeta proceso" onclick="openModal('modal-embotellado')">
+                        <img src="{% static 'images/embotellado.jpg' %}" alt="Embotellado">
+                        <h3>Embotellado</h3>
+                    </div>
+                    <div id="modal-siembra" class="modal">
+                        <span class="close" onclick="closeModal('modal-siembra')">&times;</span>
+                        <img class="modal-content" id="img-siembra" src="{% static 'images/siembra.jpg' %}" alt="Siembra">
+                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                    </div>
+                    <div id="modal-jima" class="modal">
+                        <span class="close" onclick="closeModal('modal-jima')">&times;</span>
+                        <img class="modal-content" id="img-jima" src="{% static 'images/jima.jpg' %}" alt="Jima">
+                        <div class="caption">Aquí va una descripción detallada de la jima del agave.</div>
+                    </div>
+                    <div id="modal-coccion" class="modal">
+                        <span class="close" onclick="closeModal('modal-coccion')">&times;</span>
+                        <img class="modal-content" id="img-coccion" src="{% static 'images/coccion.jpg' %}" alt="Cocción">
+                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                    </div>
+                    <div id="modal-molienda" class="modal">
+                        <span class="close" onclick="closeModal('modal-molienda')">&times;</span>
+                        <img class="modal-content" id="img-molienda" src="{% static 'images/molienda.jpg' %}" alt="Molienda">
+                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                    </div>
+                    <div id="modal-fermentacion" class="modal">
+                        <span class="close" onclick="closeModal('modal-fermentacion')">&times;</span>
+                        <img class="modal-content" id="img-fermentacion" src="{% static 'images/fermentacion.jpg' %}" alt="Fermentación">
+                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                    </div>
+                    <div id="modal-destilacion" class="modal">
+                        <span class="close" onclick="closeModal('modal-destilacion')">&times;</span>
+                        <img class="modal-content" id="img-destilacion" src="{% static 'images/destilacion.jpg' %}" alt="Destilación">
+                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                    </div>
+                    <div id="modal-embotellado" class="modal">
+                        <span class="close" onclick="closeModal('modal-embotellado')">&times;</span>
+                        <img class="modal-content" id="img-embotellado" src="{% static 'images/embotellado.jpg' %}" alt="Embotellado">
+                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="reservaciones" class="seccion">
+                <div class="titulo-seccion">Nuestras Experiencias</div>
+                <div class="reservaciones-container">
+                    <div class="experiencia">
+                        <h2>Cata Normal</h2>
+                        <p>Degustarás los distintos destilados de nuestro portafolio: Mezcal Verde, Amarás Espadín y Espadín Reposado, Amarás Cupreata, y más. De la mano de expertos, aprenderás a identificar las diferentes notas de cata.</p>
+                    <!-- Omitir la imagen o añadir una con tus propios recursos -->
+                    </div>
+                    <div class="calendario-reserva">
+                        <!-- Selector de tipo de cata -->
+                        <select id="tipo-cata" name="tipo-cata">
+                            <option value="normal">Cata Normal</option>
+                            <option value="premium">Cata Premium</option>
+                        </select>
+            
+                        <!-- Calendario simple para seleccionar fecha -->
+                        <input type="date" id="fecha-reserva" name="fecha-reserva">
+            
+                        <!-- Selector de horario -->
+                        <select id="horario-reserva" name="horario-reserva">
+                            <option value="9">09:00 AM</option>
+                            <option value="11">11:00 AM</option>
+                            <!-- Agregar más horarios según sea necesario -->
+                        </select>
+            
+                        <!-- Botón para enviar la reserva -->
+                        <button type="button" onclick="enviarReserva()">Reservar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="testimonios" class="seccion">
+                <div class="titulo-seccion">Lo que dicen nuestros visitantes</div>
+                <div class="contenido-seccion">
+                    <!-- Tarjetas de testimonios -->
+                    <div class="tarjeta testimonio">
+                        <blockquote>"Una experiencia inolvidable, el mezcal y el proceso de elaboración son excepcionales."</blockquote>
+                        <cite>- Juan Pérez</cite>
+                    </div>
+                    <!-- Más tarjetas de testimonios -->
+                </div>
+            </section>
+        </div>
+
+        <footer class="pie">
+        &copy; 2023 Palenque de Mezcal by amsidesign.
+        </footer>
+
+    </body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const secciones = document.querySelectorAll('.seccion');
+        const opcionesObserver = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                } else {
+                entry.target.classList.remove('visible');
+                }
+            });
+        }, opcionesObserver);
+        secciones.forEach(seccion => {
+            observer.observe(seccion);
+        });
+    });
+
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    function enviarReserva() {
+    var tipoCata = document.getElementById('tipo-cata').value;
+    var fechaReserva = document.getElementById('fecha-reserva').value;
+    var horarioReserva = document.getElementById('horario-reserva').value;
+
+    // Aquí podrías hacer una solicitud AJAX al servidor para guardar la reserva
+    // Por ahora, solo vamos a imprimir los valores en la consola
+    console.log('Tipo de Cata:', tipoCata);
+    console.log('Fecha de Reserva:', fechaReserva);
+    console.log('Horario de Reserva:', horarioReserva);
+
+    // Mostrar una confirmación o redirigir a otra página
+    alert('Reserva enviada. Revisa la consola para ver los detalles.');
+}
+</script>
