@@ -22,20 +22,16 @@
         </header>
 
         <div class="container">
-
-            <section class="seccion" id="campos-de-agave">
-                <div class="titulo-seccion">Bienvenidos a Nuestro Palenque de Mezcal</div>
+            <section class="seccion" id="campos-de-agave" style="background-image: url('{% static 'images/CampoMezcal2.jpg' %}');">
+                <div class="overlay"></div> <!-- Capa de superposición para mejorar la legibilidad del texto -->
+                <div class="titulo-seccion">Bienvenidos a Nuestro Palenque de Mezcal<br>El Rey de Matatlán</div>
                 <div class="contenido-seccion">
-                    <div class="tarjeta">
-                        <img src="ruta-a-tu-imagen.jpg" alt="Campos de Agave">
-                        <div class="cuerpo-tarjeta">
+                    <article class="tarjeta">
                         <h3>Campos de Agave</h3>
                         <p>Descubre los extensos campos de agave donde comienza nuestro viaje.</p>
-                        </div>
-                    </div>
+                    </article>
                 </div>
             </section>
-                   
 
             <section id="proceso-mezcal" class="seccion">
                 <div class="titulo-seccion">Proceso de Elaboración del Mezcal</div>
@@ -72,85 +68,124 @@
                     <div id="modal-siembra" class="modal">
                         <span class="close" onclick="closeModal('modal-siembra')">&times;</span>
                         <img class="modal-content" id="img-siembra" src="{% static 'images/siembra.jpg' %}" alt="Siembra">
-                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                        <div class="caption">Este proceso marca el nacimiento de la futura bebida espirituosa. 
+                            En los vastos y soleados campos de México, las semillas de agave son plantadas con gran cuidado, 
+                            iniciando su viaje de crecimiento. Este paso requiere paciencia y precisión, ya que las plantas pueden 
+                            tardar de 7 a 10 años en madurar adecuadamente antes de que estén listas para ser cosechadas. 
+                            Durante este tiempo, las plantas son cuidadas por agricultores expertos, quienes vigilan y nutren 
+                            la tierra para asegurar un crecimiento óptimo y saludable del agave.
+                        </div>
                     </div>
                     <div id="modal-jima" class="modal">
                         <span class="close" onclick="closeModal('modal-jima')">&times;</span>
                         <img class="modal-content" id="img-jima" src="{% static 'images/jima.jpg' %}" alt="Jima">
-                        <div class="caption">Aquí va una descripción detallada de la jima del agave.</div>
+                        <div class="caption">La jima es una labor intensiva que se lleva a cabo bajo el sol abrasador. 
+                            Los jimadores, artesanos de la tierra, utilizan sus coas afiladas para cortar con precisión las 
+                            hojas espinosas del agave y revelar la preciada piña. Esta tarea no solo exige fuerza sino 
+                            también una habilidad heredada a través de generaciones, ya que un corte incorrecto puede afectar 
+                            la calidad del jugo de agave que se destilará más adelante.
+                        </div>
                     </div>
                     <div id="modal-coccion" class="modal">
                         <span class="close" onclick="closeModal('modal-coccion')">&times;</span>
                         <img class="modal-content" id="img-coccion" src="{% static 'images/coccion.jpg' %}" alt="Cocción">
-                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                        <div class="caption">Las piñas son trasladadas a hornos de tierra donde se cocinan lentamente durante días, 
+                            transformándose bajo el calor. El proceso de cocción lenta es esencial para convertir los almidones de 
+                            la planta en azúcares fermentables, a la vez que imparte un característico sabor ahumado que distingue 
+                            al mezcal de otros espirituosos. La maestría en este paso es crucial, ya que el tiempo y la temperatura deben 
+                            ser controlados con exactitud para garantizar la calidad.
+                        </div>
                     </div>
                     <div id="modal-molienda" class="modal">
                         <span class="close" onclick="closeModal('modal-molienda')">&times;</span>
                         <img class="modal-content" id="img-molienda" src="{% static 'images/molienda.jpg' %}" alt="Molienda">
-                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                        <div class="caption">Una vez cocidas, las piñas se llevan a la molienda para extraer sus jugos azucarados. 
+                            Tradicionalmente, este paso se realiza con una piedra circular llamada tahona, la cual es arrastrada 
+                            por un caballo o un burro alrededor de un patio de molienda. La tahona aplasta las piñas cocidas, 
+                            liberando el jugo y las fibras en una mezcla que luego será fermentada. 
+                            Este método ancestral honra las tradiciones y contribuye al perfil de sabor único del mezcal.
+                        </div>
                     </div>
                     <div id="modal-fermentacion" class="modal">
                         <span class="close" onclick="closeModal('modal-fermentacion')">&times;</span>
                         <img class="modal-content" id="img-fermentacion" src="{% static 'images/fermentacion.jpg' %}" alt="Fermentación">
-                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                        <div class="caption">La mezcla de jugo y fibra se coloca en tinas de madera o contenedores de piedra para la fermentación. 
+                            Aquí, las levaduras nativas entran en acción, consumiendo los azúcares y convirtiéndolos en alcohol. 
+                            Este proceso puede durar de una semana a varios meses, dependiendo de la temperatura y las condiciones ambientales. 
+                            La fermentación natural sin aditivos químicos permite que el mezcal desarrolle una complejidad profunda y sabores que 
+                            reflejan su origen terrenal.
+                        </div>
                     </div>
                     <div id="modal-destilacion" class="modal">
                         <span class="close" onclick="closeModal('modal-destilacion')">&times;</span>
                         <img class="modal-content" id="img-destilacion" src="{% static 'images/destilacion.jpg' %}" alt="Destilación">
-                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                        <div class="caption">El líquido fermentado se carga en alambiques, donde el alcohol y los compuestos aromáticos 
+                            son separados del agua y las impurezas a través de la destilación. Los maestros mezcaleros ajustan el alambique y 
+                            vigilan el proceso cuidadosamente para seleccionar solo el corazón, descartando las cabezas y colas que no cumplen con 
+                            los estándares de sabor. Este proceso se repite para refinar aún más el líquido, asegurando que cada gota captura la esencia del agave.
+                        </div>
                     </div>
                     <div id="modal-embotellado" class="modal">
                         <span class="close" onclick="closeModal('modal-embotellado')">&times;</span>
                         <img class="modal-content" id="img-embotellado" src="{% static 'images/embotellado.jpg' %}" alt="Embotellado">
-                        <div class="caption">Aquí va una descripción detallada de la siembra del agave.</div>
+                        <div class="caption">El mezcal ahora purificado es dejado para reposar, permitiendo que los sabores se casen y maduren. 
+                            Algunos mezcales se envejecen en barricas de roble, añadiendo notas de madera y vainilla al perfil del sabor. 
+                            Finalmente, el líquido es embotellado con meticulosidad, sellando dentro de cada botella la tradición y el espíritu de México. 
+                            El embotellado representa la culminación de un largo proceso artesanal, listo para ser compartido y disfrutado en todo el mundo.
+                        </div>
                     </div>
                 </div>
             </section>
             
             <section id="reservaciones" class="seccion">
-                <div class="titulo-seccion">Nuestras Experiencias</div>
-                <div class="reservaciones-container">
-                    <div class="experiencia">
-                        <h2>Cata Normal</h2>
-                        <p>Degustarás los distintos destilados de nuestro portafolio: Mezcal Verde, Amarás Espadín y Espadín Reposado, Amarás Cupreata, y más. De la mano de expertos, aprenderás a identificar las diferentes notas de cata.</p>
-                    <!-- Omitir la imagen o añadir una con tus propios recursos -->
-                    </div>
+                <div class="titulo-seccion">Nuestras Experiencias de Cata</div>
+                <form action="{% url 'contacto' %}" id="form-reserva" class="reservaciones-container" method="post">
+                    {% csrf_token %}
                     <div class="calendario-reserva">
-                        <!-- Selector de tipo de cata -->
-                        <select id="tipo-cata" name="tipo-cata">
-                            <option value="normal">Cata Normal</option>
-                            <option value="premium">Cata Premium</option>
+                        
+                        <h2>Elige Tu Experiencia de Cata</h2>
+                        <input type="text" id="nombre_reserva-reserva" name="nombre_reserva" placeholder="nombre de quien realiza la reservación" class="input-reserva" >
+                        <select id="tipo-cata" name="tipo_cata" class="input-reserva"> <!-- Modificado -->
+                            <option value="normal">Cata Normal - Un recorrido clásico por nuestros mezcales más representativos.</option>
+                            <option value="premium">Cata Premium - Una selección exclusiva de nuestras reservas premium y ediciones limitadas.</option>
+                            <option value="con-maridaje">Cata con Maridaje - Una experiencia sensorial que combina nuestros mezcales con alimentos artesanales locales.</option>
+                            <option value="personalizada">Cata Personalizada - Diseña tu propia cata con la ayuda de nuestros sommeliers.</option>
+                            <option value="al-amanecer">Cata al Amanecer - Disfruta de la belleza del amanecer en nuestros campos mientras degustas.</option>
                         </select>
-            
-                        <!-- Calendario simple para seleccionar fecha -->
-                        <input type="date" id="fecha-reserva" name="fecha-reserva">
-            
-                        <!-- Selector de horario -->
-                        <select id="horario-reserva" name="horario-reserva">
+                        
+                        <input type="date" id="fecha-reserva" name="fecha_reserva" class="input-reserva"> <!-- Modificado -->
+                        <input type="text" id="telefono-reserva" name="telefono_reserva" placeholder="Teléfono" class="input-reserva"> <!-- Modificado -->
+                        <input type="email" id="correo-reserva" name="correo_reserva" placeholder="Correo Electrónico" class="input-reserva"> <!-- Modificado -->
+                        <select id="horario-reserva" name="horario_reserva" class="input-reserva"> <!-- Modificado -->
                             <option value="9">09:00 AM</option>
                             <option value="11">11:00 AM</option>
-                            <!-- Agregar más horarios según sea necesario -->
                         </select>
-            
-                        <!-- Botón para enviar la reserva -->
-                        <button type="button" onclick="enviarReserva()">Reservar</button>
+                        <button type="submit" class="input-reserva">Reservar</button>
                     </div>
-                </div>
+                </form>
             </section>
 
             <section id="testimonios" class="seccion">
                 <div class="titulo-seccion">Lo que dicen nuestros visitantes</div>
                 <div class="contenido-seccion">
-                    <!-- Tarjetas de testimonios -->
                     <div class="tarjeta testimonio">
-                        <blockquote>"Una experiencia inolvidable, el mezcal y el proceso de elaboración son excepcionales."</blockquote>
-                        <cite>- Juan Pérez</cite>
+                        <blockquote>"Descubrir el alma del mezcal a través de su proceso artesanal ha cambiado mi apreciación por las bebidas espirituosas. Cada sorbo cuenta una historia."</blockquote>
+                        <cite>- Ana Morales, Entusiasta del Mezcal</cite>
                     </div>
-                    <!-- Más tarjetas de testimonios -->
+                    <div class="tarjeta testimonio">
+                        <blockquote>"Visitar los campos de agave y ver de primera mano el cuidado que se pone en cada etapa fue revelador. El sabor auténtico del mezcal es incomparable."</blockquote>
+                        <cite>- Carlos Hernández, Viajero y Bloguero</cite>
+                    </div>
+                    <div class="tarjeta testimonio">
+                        <blockquote>"La pasión y la tradición que pude percibir en la elaboración del mezcal me dejaron una impresión duradera. ¡Es arte líquido en su máxima expresión!"</blockquote>
+                        <cite>- Sofía Gómez, Chef y Sommelier</cite>
+                    </div>
                 </div>
             </section>
         </div>
-
+        <a href="https://wa.me/529513183885" class="whatsapp-icon" target="_blank">
+            <img src="{% static 'images/whatsapp.png' %}" alt="Chat en WhatsApp">
+        </a>
         <footer class="pie">
         &copy; 2023 Palenque de Mezcal by amsidesign.
         </footer>
@@ -177,6 +212,49 @@
         secciones.forEach(seccion => {
             observer.observe(seccion);
         });
+
+        const form = document.getElementById('form-reserva');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch("{% url 'contacto' %}", {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'), // Asegúrate de obtener el token CSRF de la cookie
+                },
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert(data.message); // Muestra un mensaje con la respuesta del servidor
+                if (data.status === 'success') {
+                    form.reset(); // Opcional: limpia el formulario después de enviar
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
     });
 
     function openModal(modalId) {
@@ -187,18 +265,4 @@
         document.getElementById(modalId).style.display = "none";
     }
 
-    function enviarReserva() {
-    var tipoCata = document.getElementById('tipo-cata').value;
-    var fechaReserva = document.getElementById('fecha-reserva').value;
-    var horarioReserva = document.getElementById('horario-reserva').value;
-
-    // Aquí podrías hacer una solicitud AJAX al servidor para guardar la reserva
-    // Por ahora, solo vamos a imprimir los valores en la consola
-    console.log('Tipo de Cata:', tipoCata);
-    console.log('Fecha de Reserva:', fechaReserva);
-    console.log('Horario de Reserva:', horarioReserva);
-
-    // Mostrar una confirmación o redirigir a otra página
-    alert('Reserva enviada. Revisa la consola para ver los detalles.');
-}
 </script>

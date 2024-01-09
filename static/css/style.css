@@ -1,280 +1,405 @@
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-.container { max-width: 1200px; margin: auto; padding: 20px; }
-header { text-align: center; }
-.seccion { margin-bottom: 50px; }
-.titulo-seccion { text-align: center; font-size: 2em; margin-bottom: 30px; }
-.contenido-seccion { display: flex; justify-content: space-around; flex-wrap: wrap; }
-.tarjeta { width: 30%; margin: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.tarjeta img { width: 100%; }
-.cuerpo-tarjeta { padding: 15px; }
-.pie { text-align: center; margin-top: 50px; padding: 20px; background: #333; color: white; }
-
-/* Estilos para dispositivos móviles */
-@media (max-width: 768px) {
-    .tarjeta { width: 100%; margin-bottom: 20px; }
-    .contenido-seccion { flex-direction: column; }
-    /* Ajustes para navbar y otros elementos */
-  }
-  
-  /* Navbar estilos */
-  #navbar {
-    background-color: #333; /* Color de fondo oscuro para el navbar */
-    color: white;
-    display: flex;
-    justify-content: center; /* Centra los elementos del navbar horizontalmente */
-    padding: 0px 0; /* Espacio superior e inferior */
-    position: fixed; /* Fija el navbar en la parte superior */
-    top: 0;
-    width: 100%; /* El navbar debe ocupar todo el ancho */
-    z-index: 1000; /* Asegura que el navbar se mantenga sobre otros elementos */
-  }
-  #navbar ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex; /* Dispone los elementos de la lista horizontalmente */
-  }
-  
-  #navbar li {
-    float: left;
-  }
-  
-  #navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px; /* Espaciado alrededor de los enlaces */
-    text-decoration: none;
-    font-weight: bold; /* Hace que el texto sea más grueso */
-  }
-  #navbar li a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  #navbar li a {
-    transition: background-color 0.3s, color 0.3s; /* Suaviza las transiciones de color */
-  }
-  
-  /* Estilos para animaciones y transiciones */
-  .seccion {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .seccion.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-/* Proceso de mezcal */
-  #proceso-mezcal {
-    background: #f7f7f7;
-    padding: 50px 0;
-  }
-  
-  #proceso-mezcal .titulo-seccion {
-    margin-bottom: 40px;
-    text-align: center;
-    font-size: 2.5em;
-  }
-  
-  #proceso-mezcal .contenido-seccion {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-  }
-  
-  #proceso-mezcal .etapa {
-    flex-basis: 20%;
-    text-align: center;
-  }
-  
-  #proceso-mezcal .etapa img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-
-  #proceso-mezcal .tarjeta.proceso {
-    width: calc(20% - 20px); /* Ajustar según el número de etapas que quieras mostrar por fila */
-    margin: 10px;
-    text-align: center;
-  }
-  
-  
-  @media (max-width: 768px) {
-    #proceso-mezcal .etapa {
-      flex-basis: 45%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    #proceso-mezcal .etapa {
-      flex-basis: 100%;
-    }
-  }
-  @media (max-width: 768px) {
-    #proceso-mezcal .tarjeta.proceso {
-      width: calc(50% - 20px); /* Más espacio para dispositivos móviles */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    #proceso-mezcal .tarjeta.proceso {
-      width: 100%; /* Una columna en dispositivos muy pequeños */
-    }
-  }
-
-  .tarjeta.proceso:hover {
-    cursor: pointer;
-    transform: scale(1.05); /* Aumenta el tamaño ligeramente */
-    transition: transform 0.3s ease;
-  }
-  
-  .modal {
-    display: none; /* Ocultar el modal por defecto */
-    position: fixed;
-    z-index: 1000;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Permitir scroll si es necesario */
-    background-color: rgb(0,0,0,0.9); /* Color de fondo con opacidad */
-  }
-  
-  .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    transition: transform 0.3s ease;
-  }
-  
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-  }
-
-  #reservaciones {
-    background-color: #f4f4f4; /* Color de fondo general */
-    color: #333; /* Color del texto */
-  }
-  
-  .reservaciones-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  .experiencia, .calendario-reserva {
-    flex: 1;
-    margin: 10px;
-    background: #fff; /* Fondo para las tarjetas */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para las tarjetas */
-    padding: 20px;
-  }
-  
-  .titulo-seccion {
-    background-color: #a67c52; /* Color marrón rústico para los títulos */
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    margin-top: 19px;
-  }
-  
-  /* Estilos para los botones de fecha y hora */
-  .calendario-reserva button {
-    background-color: #a67c52; /* Color marrón rústico para botones */
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    cursor: pointer;
-  }
-  
-  .calendario-reserva button:hover {
-    background-color: #8f6946; /* Un tono más oscuro para el hover */
-  }
-  
-  /* Media queries para la responsividad */
-  @media (max-width: 768px) {
-    .reservaciones-container {
-      flex-direction: column;
-    }
-  }
-
-  #reservaciones {
-    background-color: #f4f4f4;
-    color: #333;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.reservaciones-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+.container {
+  margin: auto;
+  padding: 20px;
 }
 
-.experiencia, .calendario-reserva {
-    flex: 1;
-    margin: 10px;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    padding: 20px;
+header {
+  text-align: center;
 }
 
 .titulo-seccion {
-    background-color: #a67c52;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+  background-color: #8f6946;
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: 19px;
 }
 
-.calendario-reserva select, .calendario-reserva input, .calendario-reserva button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+.contenido-seccion {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  width: 30%;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border: 1px solid #ddd; /* Añadir un borde ligero */
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.tarjeta img {
+  width: 100%;
+}
+
+.cuerpo-tarjeta {
+  padding: 15px;
+}
+
+.pie {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
+#navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 0px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+#navbar li {
+  float: left;
+}
+
+#navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#navbar li a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar li a {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.seccion {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  margin: 20px 0;
+}
+
+.seccion.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#proceso-mezcal {
+  background: #f7f7f7;
+  padding: 50px 0;
+}
+
+#proceso-mezcal .titulo-seccion {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 2.5em;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+#proceso-mezcal .contenido-seccion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+#proceso-mezcal .etapa {
+  flex-basis: 20%;
+  text-align: center;
+}
+
+#proceso-mezcal .etapa img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+#proceso-mezcal .tarjeta.proceso {
+  width: calc(20% - 20px);
+  margin: 10px;
+  text-align: center;
+}
+
+.tarjeta.proceso:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  transition: transform 0.3s ease;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+}
+
+.reservaciones-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.experiencia,
+.calendario-reserva {
+  flex: 1;
+  margin: 10px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
 .calendario-reserva button {
-    background-color: #a67c52;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+  background-color: #a67c52;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 .calendario-reserva button:hover {
-    background-color: #8f6946;
+  background-color: #8f6946;
+}
+
+#reservaciones {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.reservaciones-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.experiencia,
+.calendario-reserva {
+  flex: 1;
+  margin: 10px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.calendario-reserva select,
+.calendario-reserva input,
+.calendario-reserva button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.calendario-reserva button {
+  background-color: #a67c52;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.calendario-reserva button:hover {
+  background-color: #8f6946;
+}
+
+#campos-de-agave {
+  background: url('/static/images/CampoMezcal2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  padding: 20px 0;
+  position: relative;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+#campos-de-agave .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según tus necesidades */
+  z-index: 1;
+}
+#campos-de-agave::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+#campos-de-agave .contenido-seccion {
+  position: relative;
+  z-index: 1;
+}
+
+#campos-de-agave .tarjeta {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+#campos-de-agave .titulo-seccion {
+  /* background-color: transparent; */
+  background-color: rgba(78, 77, 77, 0.6); /* Ajusta la opacidad según sea necesario */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Opcional para bordes suavizados */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 2.5em; /* Ajusta este valor según sea necesario */
+    font-weight: bold; /* Opcional, para un texto más grueso */
+    font-family: 'Arial', sans-serif; /* O la fuente que prefieras */
+    margin-bottom: 30px; /* Ajusta el margen inferior según sea necesario */
+    letter-spacing: 1px; /* Espacio entre letras para mejor legibilidad */
+    text-align: center;
+}
+
+#navbar li a:hover,
+.boton:hover {
+  background-color: #8f6946;
+  color: #ffffff;
+  transition: background-color 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
-    .reservaciones-container {
-        flex-direction: column;
-    }
+  .tarjeta {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .titulo-seccion {
+    font-size: 1.5em;
+  }
+  .contenido-seccion {
+    flex-direction: column;
+  }
+  .reservaciones-container {
+    flex-direction: column;
+  }
+  #proceso-mezcal .tarjeta.proceso {
+    width: calc(50% - 20px);
+  }
+  #proceso-mezcal .etapa {
+    flex-basis: 45%;
+  }
+  .reservaciones-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  #proceso-mezcal .etapa {
+    flex-basis: 100%;
+  }
+
+  #proceso-mezcal .tarjeta.proceso {
+    width: 100%;
+  }
+}
+
+.whatsapp-icon {
+  position: fixed; /* Se mantiene fijo en la pantalla mientras se desplaza */
+  bottom: 30px; /* Espacio desde la parte inferior de la pantalla */
+  right: 35px; /* Espacio desde la parte derecha de la pantalla */
+  z-index: 1000; /* Se asegura de que el ícono esté por encima de otros elementos */
+}
+
+@media (max-width: 600px) {
+  .whatsapp-icon {
+      bottom: 10px; /* Ajustar si se necesita más espacio desde el fondo en móviles */
+      right: 10px; /* Ajustar si se necesita más espacio desde la derecha en móviles */
+      width: 50px; /* Ajustar el tamaño del icono para pantallas más pequeñas si es necesario */
+  }
+}
+
+.input-reserva {
+  width: 100%; /* Esto hará que cada input se expanda para llenar el ancho del contenedor padre */
+    padding: 10px; /* Agrega algo de espacio dentro del input */
+    margin-bottom: 10px; /* Agrega espacio debajo de cada input */
+    border: 1px solid #ccc; /* Estilo del borde (opcional) */
+    box-sizing: border-box; /* Esto asegura que el padding y el borde estén incluidos en el ancho total del input */
+    border-radius: 4px; /* Para bordes redondeados (opcional) */
+}
+/* Para asegurarte de que el botón no se estire demasiado en comparación con los otros inputs */
+button.input-reserva {
+  padding: 10px 20px; /* El relleno horizontal puede ser diferente para el botón */
+    width: auto; /* O podrías establecer un ancho específico si no quieres que se expanda */
+    box-sizing: border-box; /* Asegúrate de que esta propiedad también se aplique al botón */
+}
+
+@media (max-width: 768px) {
+  .input-reserva,
+  button.input-reserva {
+      width: 100%; /* En dispositivos móviles, probablemente quieras que ocupen todo el ancho disponible */
+  }
 }
